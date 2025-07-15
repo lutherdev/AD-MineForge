@@ -76,3 +76,20 @@ textarea {
   transform: scale(1.05);
   box-shadow: 0 0 18px rgba(255, 160, 80, 0.8);
 }
+
+.medieval-map img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  margin: 8px 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.contact-info .label {
+  font-weight: bold;
+  color: #3e240c;
+}
