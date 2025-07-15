@@ -6,7 +6,7 @@
     $current_page = basename($_SERVER['PHP_SELF']);
 
 ?>
-<link rel="stylesheet" href="/assets/css/nav.component.css">
+<link rel="stylesheet" href="/assets/css/nav-component.css">
     <nav class="navbar">
         <div class="navbar-container">
             <div class="navbar-logo">
@@ -44,4 +44,4 @@
             </div>
         </div>
     </nav>
-        <script src="../assets/js/nav.component.js" defer></script>
+        <script src="../assets/js/nav-component.js" defer></script>
