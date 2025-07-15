@@ -115,3 +115,9 @@ body {
 .login-box button:hover {
   background: #c0c0c0;
 }
+
+.error {
+  color: red;
+  margin-top: 10px;
+  text-align: center;
+}
