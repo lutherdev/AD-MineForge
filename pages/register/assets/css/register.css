@@ -34,3 +34,14 @@ body {
   color: #d4af37;
   text-shadow: 1px 1px 2px #1a1a1a;
 }
+
+.input-group {
+  margin-bottom: 1.25rem;
+}
+
+.input-group {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+  font-weight: bold;
+}
