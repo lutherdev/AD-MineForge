@@ -26,3 +26,15 @@ body {
   justify-content: center;
   gap: 15px;
 }
+
+.menu-btn {
+  background: #b0843f;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
