@@ -1,9 +1,18 @@
-  body {
+body {
   margin: 0;
   font-family: 'MedievalSharp', cursive;
   background: url(/pages/store/assets/img/storeBG.png);
+  background-size: contain;
   color: #333;
+  padding: 0;
 }
+
+.outer-wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .store-container {
   padding: 40px 5%;
   display: flex;
@@ -134,7 +143,7 @@
   border-radius: 12px;
   border: 2px solid #5a4231;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
- min-height: 180px;
+  min-height: 180px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
