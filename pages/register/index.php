@@ -45,6 +45,9 @@ $error = $_GET['error'] ?? '';
       <input type="hidden" name="action" value="register">
       <button type="submit">Register</button>
 
+      <?php if (!empty($error)): ?>
+        <p class="error"><?= htmlspecialchars($error) ?></p>
+      <?php endif; ?>
     </form>
   </div>
 </div>
