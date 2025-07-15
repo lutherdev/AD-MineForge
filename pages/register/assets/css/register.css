@@ -45,3 +45,34 @@ body {
   color: #1a1a1a;
   font-weight: bold;
 }
+
+.input-group input[type="text"],
+.input-group input[type="password"],
+.input-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-bottom: 2px solid #5c4d3c;
+  background-color: rgba(255,255,255,0.7);
+  font-size: 1rem;
+  transition: all 0.3s;
+  font-family: 'Georgia',serif;
+}
+
+.input-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%235c4d3c'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 12px;
+    padding-right: 2rem;
+}
+
+.input-group input[type="text"]:focus,
+.input-group input[type="password"]:focus,
+.input-group select:focus {
+  border-bottom-color: #d4af37;
+  background-color: rgba(255,255,255,0.9);
+  outline: none;
+}
