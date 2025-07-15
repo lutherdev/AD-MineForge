@@ -2,16 +2,16 @@
 require_once 'bootstrap.php';
 
 $team_members = [['name' => 'Luther Dean',
-    'role' => 'Forge Master',
-    'image' => '/pages/about-us/assets/img/member1.jpg',
+    'role' => 'QA & Backend',
+    'image' => '/pages/about-us/assets/img/member3.jpg',
 ],
     ['name' => 'Ping Wei',
-    'role' => 'Pickwarden',
-    'image' => '/pages/about-us/assets/img/member2.jpg',
+    'role' => 'Database & Frontend',
+    'image' => '/pages/about-us/assets/img/member2.png',
 ],
     ['name' => 'Christian Molina',
-    'role' => 'Emberhand',
-    'image' => '/pages/about-us/assets/img/member3.jpg',
+    'role' => 'Frontend',
+    'image' => '/pages/about-us/assets/img/member1.jpg',
 ]];
 ?>
 
