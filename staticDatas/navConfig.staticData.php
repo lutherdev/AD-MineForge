@@ -25,7 +25,7 @@ if (isset($_SESSION['user'])) {
             'About Us' => 'about-us',
             'Store' => 'store',
             'Contact Us' => 'contact-us',
-            'Dashboard' => 'dashboard',
+            'Admin Dashboard' => 'admin-dashboard',
             'Account' => [
                 'Profile' => 'profile-page',
                 'Logout' => 'handlers/logout.handler.php'
