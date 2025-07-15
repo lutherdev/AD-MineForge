@@ -67,3 +67,24 @@ body {
   border-color: #d4af37;
   box-shadow: 0 0 5px rgba(212,175,55,0.5);
 }
+
+.login-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #d4af37;
+  color: #3a2a0e;
+  border: none;
+  border-radius: 3px;
+  font-family: 'MedievalSharp', cursive;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3 ease;
+  margin-top: 1rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.login-btn:hover {
+  background: #c19b2e;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
