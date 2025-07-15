@@ -37,3 +37,42 @@ body {
   justify-content: center;
   padding: 70px;
 }
+
+input[type="text"], input[type="email"], textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #36210c;
+  font-size: 14px;
+  background-color: #927641;
+  color: #2d1b00;
+  font-family: 'MedievalSharp', cursive;
+}
+
+.comment input::placeholder,
+.comment textarea::placeholder {
+  color: #000000;
+  opacity: 1;
+}
+
+textarea {
+  height: 150px;
+}
+
+.box-button button {
+  background-color: #55360e;
+  color: #f8e6c2;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'MedievalSharp', cursive;
+  box-shadow: 0 0 10px rgba(255, 207, 120, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.box-button button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(255, 160, 80, 0.8);
+}
