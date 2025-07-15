@@ -25,6 +25,17 @@
           </div>
         </aside>
       </div>
+
+      <div class="cart-image-wrapper desktop-category">
+        <aside class="category">
+          <div class="store-filters">
+            <button class="menu-btn active" data-category="all">All</button>
+            <button class="menu-btn" data-category="ore">Ore</button>
+            <button class="menu-btn" data-category="tools">Tools</button>
+            <button class="menu-btn" data-category="gear">Gear</button>
+          </div>
+        </aside>
+      </div>
     </div>
 
     <div class="products-image-wrapper">
