@@ -1,4 +1,4 @@
-body {
+  body {
   margin: 0;
   font-family: 'MedievalSharp', cursive;
   background: url(/pages/store/assets/img/storeBG.png);
@@ -10,7 +10,6 @@ body {
   flex-direction: column;
   gap: 30px;
 }
-
 .store-header {
   text-align: center;
 }
@@ -26,7 +25,6 @@ body {
   justify-content: center;
   gap: 15px;
 }
-
 .menu-btn {
   background: #b0843f;
   border: none;
@@ -95,6 +93,7 @@ body {
   text-shadow: 1px 1px 2px #000;
   margin: 0;
 }
+
 
 .leftside{
   display: flex;
@@ -313,6 +312,20 @@ body {
 
 .price-action button:hover {
   background: #a3551e;
+}
+
+/*hide on desktop*/
+.mobile-cart-button,
+.mobile-cart-popup {
+  display: none;
+}
+
+.mobile-category-popup{
+  display: none;
+}
+
+#mobile-category-toggle{
+    display: none;
 }
 
 @media (max-width: 768px) {
