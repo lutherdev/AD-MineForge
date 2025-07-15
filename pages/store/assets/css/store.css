@@ -10,3 +10,19 @@ body {
   flex-direction: column;
   gap: 30px;
 }
+
+.store-header {
+  text-align: center;
+}
+.store-header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #91562b;
+}
+
+.store-filters {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
