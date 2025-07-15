@@ -16,7 +16,17 @@ $error = $_GET['error'] ?? '';
         <label>Password: </label>
         <input type="password" name="password" required>
       </div>
-      
+
+      <div class="input-group">
+        <label>Firstname: </label>
+        <input type="text" name="firstname" required>
+      </div>
+
+      <div class="input-group">
+        <label>Lastname: </label>
+        <input type="text" name="lastname" required>
+      </div>
+
     </form>
   </div>
 </div>
