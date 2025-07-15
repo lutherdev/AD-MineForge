@@ -27,6 +27,22 @@ $error = $_GET['error'] ?? '';
         <input type="text" name="lastname" required>
       </div>
 
+      <div class="input-group">
+        <label>Street: </label>
+        <input type="text" name="street" required>
+      </div>
+
+      <div class="input-group">
+        <label>Province: </label>
+        <input type="text" name="province" required>
+      </div>
+
+      <div class="input-group">
+        <label>City: </label>
+        <input type="text" name="city" required>
+      </div>
+
+
     </form>
   </div>
 </div>
