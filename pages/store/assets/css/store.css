@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  font-family: 'MedievalSharp', cursive;
+  background: url(/pages/store/assets/img/storeBG.png);
+  color: #333;
+}
+.store-container {
+  padding: 40px 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
