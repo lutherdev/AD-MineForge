@@ -54,6 +54,39 @@
         </div>
       </div>
     </div>
+
+    
+
+<button id="mobile-category-toggle" class="mobile-category-button">☰ Categories</button>
+
+    <button id="mobile-cart-toggle" class="mobile-cart-button">🛒 Cart</button>
+
+    <div id="mobile-category-popup" class="mobile-category-popup hidden">
+    <div class="category-popup-content">
+        <aside class="category">
+        <div class="store-filters">
+            <button class="menu-btn active" data-category="all">All</button>
+            <button class="menu-btn" data-category="ore">Ore</button>
+            <button class="menu-btn" data-category="tools">Tools</button>
+            <button class="menu-btn" data-category="gear">Gear</button>
+        </div>
+        </aside>
+    </div>
+    </div>
+
+    <div id="mobile-cart-popup" class="mobile-cart-popup hidden">
+    <div class="cart-popup-content">
+        <aside class="cart-box">
+            <h2>Cart</h2>
+            <ul id="cart-items-mobile"></ul>
+            <div class="total">Total: ₱<span id="cart-total-mobile">0</span></div>
+            <div class='cart-buttons'>
+            <div class='btn-cancel'><button id="checkout-btn-mobile">CHECKOUT</button></div>
+            <div class='btn-cancel'><button id="cancel-btn-mobile">CANCEL</button></div>
+            </div>
+        </aside>
+    </div>
+    </div>
   </div>
 
 </section>
