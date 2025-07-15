@@ -52,3 +52,8 @@ body {
   margin: 0 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
+
+.topupbtn:hover {
+  background: #a3551e;
+  color: #fff;
+}
