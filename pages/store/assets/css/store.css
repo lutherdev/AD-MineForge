@@ -38,3 +38,17 @@ body {
   cursor: pointer;
   transition: 0.3s;
 }
+
+.topupbtn {
+  background: #5f4926;
+  border: 2px solid #b0843f;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 0 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
