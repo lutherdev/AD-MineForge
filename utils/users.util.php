@@ -23,3 +23,12 @@ function insertUser($pdo, $user) {
         ':city' => strtolower($user['city']),
     ]);
 }
+
+function getAllUsers(): array {
+    global $pdo;
+    $stmt = $pdo->prepare("SELECT * FROM users");
+    $stmt->execute();
+    $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $users;
+}
