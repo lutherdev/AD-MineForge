@@ -1,8 +1,15 @@
-<!--BACKEND-->
-<!--BACKEND-->
-<!--BACKEND-->
-<!--BACKEND-->
-<!--BACKEND-->
+<?php
+require_once BASE_PATH . '/bootstrap.php';
+require_once UTILS_PATH . '/item_orders.util.php';
+if (!isset($_SESSION['user'])) {
+    echo "<script>window.location.href = '/login?error=Please+Login+Admin';</script>";
+    exit;
+}
+global $pdo;
+$id = $_SESSION['user']['id'];
+$username = $_SESSION['user']['username'];
+$orders = getAllOrders();
+?>
 
 <div class="view-outer">
   <div class="in-outer">
@@ -11,10 +18,9 @@
     </div>
 
     <div class="table-container">
-      <!--BACKEND-->
-      <!--BACKEND-->
-      <!--BACKEND-->
-      <!--BACKEND-->
+      <?php if (count($orders) === 0): ?>
+        <p style="color: #fff;">NO ONE ORDERED.</p>
+      <?php else: ?>
         <div class="scroll-wrapper">
           <table class="user-table">
             <thead>
@@ -28,20 +34,20 @@
               </tr>
             </thead>
             <tbody>
-              <!--BACKEND--><!--BACKEND-->
+              <?php foreach ($orders as $order): ?>
                 <tr>
-                  <td><!--BACKEND--></td>
-                  <td><!--BACKEND--></td>
-                  <td><!--BACKEND--></td>
-                  <td><!--BACKEND--></td>
-                  <td><!--BACKEND--></td>
-                  <td><!--BACKEND--></td>
+                  <td><?= htmlspecialchars($order['id']) ?></td>
+                  <td><?= htmlspecialchars($order['user_id']) ?></td>
+                  <td><?= ucwords(htmlspecialchars($order['item_name'])) ?></td>
+                  <td><?= ucwords(htmlspecialchars($order['quantity'])) ?></td>
+                  <td><?= ucwords(htmlspecialchars($order['total'])) ?></td>
+                  <td><?= ucwords(htmlspecialchars($order['created_at'])) ?></td>
                 </tr>
-             <!--BACKEND--><!--BACKEND-->
+              <?php endforeach; ?>
             </tbody>
           </table>
         </div>
-      <!--BACKEND--><!--BACKEND-->
+      <?php endif; ?>
     </div>
   </div>
 </div>
