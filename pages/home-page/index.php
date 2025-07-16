@@ -35,7 +35,7 @@ $homePageCss = '/pages/homepage/assets/css/home-page.css';
         <p>Mine the most exquisite, high-grade veins beneath the Sword Coast mountains.</p>
         <div class="hero-btn">
             <a href="store" class="btn-gold">Browse Our Wares</a>
-            <a href="aboutUs" class="btn-outline">Learn Our History</a>
+            <a href="about-us" class="btn-outline">Learn Our History</a>
         </div>
         </div>
     </section>
