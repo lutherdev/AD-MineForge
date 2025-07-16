@@ -12,6 +12,8 @@ $pageFile = PAGES_PATH . "/{$folder}/index.php";
 $pageCssPath = "pages/{$folder}/assets/css/{$folder}.css";
 $title = ucfirst($folder);
 
+
+require_once COMPONENTS_PATH . '/templates/loading.component.php';
 renderMainLayout(function () use ($pageFile) {
     if (file_exists($pageFile)) {
         require $pageFile;
