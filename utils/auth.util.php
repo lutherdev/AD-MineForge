@@ -88,6 +88,18 @@ class Auth{
         return $user;
     }
 
+    public static function checkUser($pdo, $username){
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE LOWER(username) = LOWER(?)");
+        $stmt->execute([$username]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        if (!$user){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
     public static function user(): ?array
     {
         return $_SESSION['user'] ?? null;
