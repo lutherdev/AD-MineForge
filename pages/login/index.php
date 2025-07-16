@@ -4,7 +4,7 @@ $error = $_GET['error'] ?? '';
 
 <div class="login-container">
   <div class="parchment-login">
-    <h2 class="login-title">MineForge Access</h2>
+    <h2 class="login-title">MineForge</h2>
     <div class = "login-divider">⚒⚒⚒</div>
 
 
@@ -19,7 +19,7 @@ $error = $_GET['error'] ?? '';
     <input type="password" id="password" name="password" class="form-input" required>
   </div>
       <input type="hidden" name="action" value="login">
-      <button type="submit" class="login-btn">Enter The Mines</button>
+      <button type="submit" class="login-btn">Login</button>
 
       <?php if (!empty($error)): ?>
         <p class="error"><?= htmlspecialchars($error) ?></p>
