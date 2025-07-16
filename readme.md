@@ -10,7 +10,7 @@
   <h3 align="center">MineForge</h3>
 </div>
 <div align="center">
-  MineForge, your marketplace for mining gears, ores, and amazingly legendary tools from the mountains of Sword Coast.
+  MineForge, your marketplace for mining gears, ores, and amazingly forged tools from the mountains of Sword Coast.
 </div>
 
 <br />
@@ -78,6 +78,10 @@ MineForge is a medieval themed store that offers mining tools, gears and ores fo
 #### Databases
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
 
+#### Deployment
+
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Composer](https://img.shields.io/badge/Composer-885630?style=for-the-badge&logo=composer&logoColor=white)
 
 ## Rules, Practices and Principles
 
@@ -145,5 +149,5 @@ AD-ProjectName
 | ------------ | ----------------------------------------------------------------------------- | ------------- |
 | Item Images  | Images for the items in the store                                             | https://chatgpt.com |
 | Card Images  | Images for the card                                                           | https://chatgpt.com |
-| Sample Title | Sample purpose would be here like this and this is the example of what it is. | trykolang.com |
-| Sample Title | Sample purpose would be here like this and this is the example of what it is. | trykolang.com |
+| Google Images| Utilized for some images                                                      | https://google.com |
+| Pinterest    | Utilized for some background images                                           | https://ph.pinterest.com |
