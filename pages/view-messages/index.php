@@ -1,8 +1,13 @@
-<!--BACKEND-->
-<!--BACKEND-->
-<!--BACKEND-->
-<!--BACKEND-->
-<!--BACKEND-->
+<?php
+require_once BASE_PATH . '/bootstrap.php';
+require_once UTILS_PATH . '/users_messages.util.php'; 
+
+if (!isset($_SESSION['user'])) {
+    echo "<script>window.location.href = '/login';</script>";
+    exit;
+}
+$messages = getAllMessages();
+?>
 
 <div class="view-outer">
   <div class="in-outer">
@@ -11,10 +16,9 @@
     </div>
 
     <div class="table-container">
-      <!--BACKEND-->
-      <!--BACKEND-->
-      <!--BACKEND-->
-      <!--BACKEND-->
+      <?php if (count($messages) === 0): ?>
+        <p style="color: #fff;">NO MESSAGES.</p>
+      <?php else: ?>
         <div class="scroll-wrapper">
           <table class="user-table">
             <thead>
@@ -26,18 +30,18 @@
               </tr>
             </thead>
             <tbody>
-              <!--BACKEND--><!--BACKEND--><!--BACKEND-->
+              <?php foreach ($messages as $message): ?>
                 <tr>
-                  <td><!--BACKEND--></td>
-                  <td><!--BACKEND--></td>
-                  <td><!--BACKEND--></td>
-                  <td><!--BACKEND--></td>
+                  <td><?= htmlspecialchars($message['id']) ?></td>
+                  <td><?= ucwords(htmlspecialchars($message['name'])) ?></td>
+                  <td><?= htmlspecialchars($message['email']) ?></td>
+                  <td><?= nl2br(htmlspecialchars($message['message'])) ?></td>
                 </tr>
-              <!--BACKEND--><!--BACKEND-->
+              <?php endforeach; ?>
             </tbody>
           </table>
         </div>
-      <!--BACKEND--><!--BACKEND-->
+      <?php endif; ?>
     </div>
   </div>
 </div>
