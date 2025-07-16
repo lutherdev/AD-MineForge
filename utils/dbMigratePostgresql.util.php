@@ -6,7 +6,7 @@ require_once 'bootstrap.php';
 try {
 
 echo "Dropping old tables…\n";
-foreach (['users', 'items', 'item_orders', 'users_messages', 'images'] as $table) {
+foreach (['users', 'items', 'item_orders', 'users_messages'] as $table) {
 $pdo->exec("DROP TABLE IF EXISTS {$table} CASCADE;");
 }
 
