@@ -33,7 +33,7 @@ class Auth{
             return 'db_error';
         }
     }
-    
+
     public static function logout(): void
     {
         $_SESSION = [];
@@ -52,6 +52,14 @@ class Auth{
         session_destroy();
     }
 
+    public static function getData(PDO $pdo, string $username){
+        $user = getUserData($username);
+        if (!$user){
+            return 'no_username';
+        }
+        self::sessionSet($user);
+        return $user;
+    }
 
     public static function user(): ?array
     {
