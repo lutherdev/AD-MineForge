@@ -1,6 +1,12 @@
-<!--
-BACKEND
--->
+<?php
+require_once BASE_PATH . '/bootstrap.php';
+require_once UTILS_PATH . '/items.util.php';
+if (!isset($_SESSION['user'])) {
+    echo "<script>window.location.href = '/login?error=Please+Login+Admin';</script>";
+    exit;
+}
+$items = getAllItems();
+?>
 <div class="view-outer">
   <div class="in-outer">
     <div class="view">
@@ -8,7 +14,9 @@ BACKEND
     </div>
 
     <div class="table-container">
-      <!--BACKEND-->
+      <?php if (count($items) === 0): ?>
+        <p style="color: #fff;">NO ITEMS.</p>
+      <?php else: ?>
         <div class="scroll-wrapper">
           <table class="user-table">
             <thead>
@@ -23,21 +31,21 @@ BACKEND
               </tr>
             </thead>
             <tbody>
-              <!--BACKEND-->
+              <?php foreach ($items as $item): ?>
                 <tr>
-                  <td><!--BACKEND--></td>
-                  <td><!--BACKEND--></td>
-                  <td><!--BACKEND--></td>
-                  <td><!--BACKEND--></td>
-                  <td><!--BACKEND--></td>
-                  <td><!--BACKEND--></td>
-                  <td><!--BACKEND--></td>
+                  <td><?= htmlspecialchars($item['id']) ?></td>
+                  <td><?= ucwords(htmlspecialchars($item['name'])) ?></td>
+                  <td><?= ucwords(htmlspecialchars($item['description'])) ?></td>
+                  <td><?= ucwords(htmlspecialchars($item['category'])) ?></td>
+                  <td><?= ucwords(htmlspecialchars($item['price'])) ?></td>
+                  <td><?= ucwords(htmlspecialchars($item['quantity'])) ?></td>
+                  <td><?= htmlspecialchars($item['status']) ?></td>
                 </tr>
-              <!--BACKEND-->
+              <?php endforeach; ?>
             </tbody>
           </table>
         </div>
-    <!--BACKEND-->
+      <?php endif; ?>
     </div>
   </div>
 </div>
