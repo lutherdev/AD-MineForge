@@ -23,9 +23,9 @@ BACKEND
               </tr>
             </thead>
             <tbody>
-              <?php foreach ($items as $item): ?>
+              <!--BACKEND-->
                 <tr>
-                  <td><?= htmlspecialchars($item['id']) ?></td>
+                  <td><!--BACKEND--></td>
                   <td><!--BACKEND--></td>
                   <td><!--BACKEND--></td>
                   <td><!--BACKEND--></td>
