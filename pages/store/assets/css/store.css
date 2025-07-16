@@ -26,7 +26,7 @@ body {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 15px;
-  color: #91562b;
+  color: #91562b; 
 }
 
 .store-filters {
@@ -168,17 +168,7 @@ body {
   max-height: 250px;
 }
 #cart-items::-webkit-scrollbar {
-  width: 13px;
-}
-#cart-items::-webkit-scrollbar-track {
-  background-color: #38301d;
-}
- .category::-webkit-scrollbar {
-  width: 13px;
-}
-
- .category::-webkit-scrollbar-track {
-  background-color: #38301d;
+  display: none;
 }
 
 .cart-box ul,
@@ -270,7 +260,7 @@ body {
   border: 1px solid #b0843f;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   text-align: center;
   transition: transform 0.3s;
 }
@@ -279,12 +269,16 @@ body {
 }
 .product-card img {
   width: 100%;
-  height: 160px;
+  height: 190px;
+  min-height: 160px;
   object-fit: cover;
+  display: block;
 }
 .product-info {
   padding: 15px;
+  min-height: 195px;
   background: url(/pages/store/assets/img/productinfoBG.png);
+  background-size: cover;
 }
 .product-info h3 {
   font-size: 1.1rem;
@@ -292,11 +286,13 @@ body {
   color: black;
 }
 .product-info p {
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   margin: 4px 0;
   min-height: 40px;
+  max-height: 40px;
   color: black;
 }
+
 .price-action {
   display: flex;
   justify-content: space-between;
@@ -324,8 +320,14 @@ body {
 }
 
 /*hide on desktop*/
-.mobile-cart-button,
-.mobile-cart-popup {
+.mobile-cart-popup,
+.mobile-category-popup {
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  display: none;
+}
+
+.mobile-cart-button{
   display: none;
 }
 
@@ -336,6 +338,35 @@ body {
 #mobile-category-toggle{
     display: none;
 }
+
+  .mobile-cart-popup,
+  .mobile-category-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+  }
+
+  .cart-popup-content,
+  .category-popup-content {
+    background: #fff;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
 
 @media (max-width: 768px) {
   .store-main {
@@ -354,11 +385,19 @@ body {
 
   .products-grid {
     gap: 20px;
+    max-height: 1000px;
   }
 
   .product-card {
-    width: 100%;
-    max-width: 300px;
+    width: 45%;
+    max-height: 355px;
+  }
+
+  .checkoutbtn{
+    width: 80px;
+    height: 35px;
+    font-size: 10px;
+    padding: 0;
   }
 
   /* Show mobile buttons */
