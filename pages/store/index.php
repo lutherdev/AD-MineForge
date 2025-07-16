@@ -108,7 +108,7 @@ if (isset($_SESSION['user'])) {
                         <p><?= htmlspecialchars($product['quantity']) ?> PIECES LEFT</p>
                         <div class="price-action">
                         <span class="price">₱<?= number_format($product['price'], 2) ?></span>
-                        <button onclick="addToCart('<?= $product['id'] ?>','<?= addslashes($product['name']) ?>', <?= $product['price'] ?>, '<?= strtolower($product['category']) ?>')">Add to Cart</button>
+                        <button class="checkoutbtn" onclick="addToCart('<?= $product['id'] ?>','<?= addslashes($product['name']) ?>', <?= $product['price'] ?>, '<?= strtolower($product['category']) ?>')">Add to Cart</button>
                         </div>
                     </div>
                     </div>

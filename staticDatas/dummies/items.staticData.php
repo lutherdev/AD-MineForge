@@ -6,7 +6,7 @@ $products = [
         'description' => 'Essential for mining stone and ore.',
         'quantity' => 3,
         'category' => 'Tools',
-        'image' => '/pages/store/assets/img/pickaxe.png',
+        'image' => '/pages/store/assets/img/pikax.png',
         'status' => "is-active"
     ],
     [
@@ -15,7 +15,7 @@ $products = [
         'description' => 'Precious gold used for trading and decorations.',
         'quantity' => 3,
         'category' => 'Ore',
-        'image' => '/pages/store/assets/img/pickaxe.png',
+        'image' => '/pages/store/assets/img/goldNugg.png',
         'status' => "is-active"
     ],
     [
@@ -24,7 +24,7 @@ $products = [
         'description' => 'Raw metal for crafting tools and armor.',
         'quantity' => 3,
         'category' => 'Tools',
-        'image' => '/pages/store/assets/img/pickaxe.png',
+        'image' => '/pages/store/assets/img/ironPick.png',
         'status' => "is-active"
     ],
     [
@@ -33,7 +33,7 @@ $products = [
         'description' => 'Keep your tunnels lit and safe.',
         'quantity' => 3,
         'category' => 'Gear',
-        'image' => '/pages/store/assets/img/pickaxe.png',
+        'image' => '/pages/store/assets/img/ironPick.png',
         'status' => "is-active"
     ],
     [
@@ -42,7 +42,7 @@ $products = [
         'description' => 'Protects your head from falling rocks.',
         'quantity' => 3,
         'category' => 'Gear',
-        'image' => '/pages/store/assets/img/pickaxe.png',
+        'image' => '/pages/store/assets/img/minerhelmet.png',
         'status' => "is-active"
     ],
     [
@@ -51,7 +51,7 @@ $products = [
         'description' => 'Essential for digging through dirt and gravel.',
         'quantity' => 3,
         'category' => 'Tools',
-        'image' => '/pages/store/assets/img/shovel.png',
+        'image' => '/pages/store/assets/img/steelShovel.png',
         'status' => "is-active"
     ],
     [
@@ -60,7 +60,7 @@ $products = [
         'description' => 'Used to transport large amounts of ore.',
         'quantity' => 3,
         'category' => 'Gear',
-        'image' => '/pages/store/assets/img/cart.png',
+        'image' => '/pages/store/assets/img/oreCart.png',
         'status' => "is-active"
     ],
     [
@@ -105,7 +105,7 @@ $products = [
         'description' => 'Reliable source of light underground.',
         'quantity' => 3,
         'category' => 'Gear',
-        'image' => '/pages/store/assets/img/lantern.png',
+        'image' => '/pages/store/assets/img/Lantern.png',
         'status' => "is-active"
     ],
     [
@@ -114,7 +114,7 @@ $products = [
         'description' => 'Used for panning gold in riverbeds.',
         'quantity' => 3,
         'category' => 'Tools',
-        'image' => '/pages/store/assets/img/goldpan.png',
+        'image' => '/pages/store/assets/img/GoldPan.png',
         'status' => "is-active"
     ]
 ];
