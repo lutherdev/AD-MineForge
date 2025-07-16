@@ -18,7 +18,7 @@
             <label for="amount">Enter Amount (Gold):</label>
             <input type="number" id="amount" name="amount" min="1" required>
             <button type="submit" class="gold-btn">Add Gold</button>
-            <a href="profile" class="gold-btn back-btn">Back to Profile</a>
+            <a href="profile-page" class="gold-btn back-btn">Back to Profile</a>
         </form>
     </div>
 </div>
