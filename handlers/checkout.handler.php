@@ -82,6 +82,26 @@ try {
             throw new Exception("No item matched to update for: " . $item['name']);
         }
 
+        $totalCost = $item['price'] * $item['quantity'];
+        $updateMon = $pdo->prepare("
+            UPDATE users
+            SET wallet = wallet - :item_total
+            WHERE id = :user_id
+        ");
+
+        $updateMon->execute([
+            ':user_id' => $user['id'],
+            ':item_total' => $totalCost
+        ]);
+
+        if ($updateMon->rowCount() === 0) {
+            throw new Exception("Wallet update failed — user not found or wallet unchanged for ID: {$user['id']}");
+        } else {
+            $walletCheck = $pdo->prepare("SELECT wallet FROM users WHERE id = :user_id");
+            $walletCheck->execute([':user_id' => $user['id']]);
+            $remaining = $walletCheck->fetchColumn();
+        }
+
         
     }
     $pdo->commit();
