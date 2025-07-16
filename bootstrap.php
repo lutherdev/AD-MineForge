@@ -16,3 +16,10 @@ define('ASSETS_PATH', BASE_PATH . '/assets');
 define('DUMMIES_PATH', STATICDATAS_PATH . '/dummies');
 
 chdir(BASE_PATH);
+
+
+require_once UTILS_PATH . '/envSetter.util.php';
+
+require_once UTILS_PATH . '/auth.util.php';
+Auth::init();
+
