@@ -8,3 +8,11 @@ function getAvailableItems(): array {
     return $items;
 }
 
+function getAllItems(): array {
+    global $pdo;
+    $stmt = $pdo->prepare("SELECT * FROM items");
+    $stmt->execute();
+    $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $items;
+}
