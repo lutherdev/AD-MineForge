@@ -1,4 +1,13 @@
-<!--BACKEND-->
+<?php
+if (!isset($_SESSION['user'])) {
+    if ($_SESSION['user']['role'] == 'customer'){
+      echo "<script>window.location.href = '/login?error=Please+Login+Admin';</script>";
+      exit;
+    }
+}
+$success = $_GET['success'] ?? '';
+$error = $_GET['error'] ?? '';
+?>
 
 <div class="remove-outer">
   <div class="remove">
@@ -8,7 +17,12 @@
         <input type="text" name="item_id" required>
 
         <button type="submit">Remove Item</button>
-        <!--BACKEND-->
+        <?php if (!empty($error)): ?>
+          <p class="error"><?= htmlspecialchars($error) ?></p>
+        <?php endif; ?>
+        <?php if (!empty($success)): ?>
+          <p class="error"><?= htmlspecialchars($success) ?></p>
+        <?php endif; ?>
     </form>
   </div>
 </div>
