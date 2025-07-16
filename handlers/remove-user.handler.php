@@ -5,6 +5,11 @@ Auth::init();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username']);
 
+    if ($username == $_SESSION['user']['username']){
+        header("Location: /remove-user?error=cant+delete+self");
+        exit;
+    } 
+
     $checkStmt = $pdo->prepare("SELECT COUNT(*) FROM users WHERE username = :name");
     $checkStmt->execute([':name' => $username]);
     $count = $checkStmt->fetchColumn();
