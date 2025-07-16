@@ -16,7 +16,6 @@ body{
   align-items: center;
   min-height: 110vh;
   padding: 40px 20px;
-  background: url('/pages/profile/assets/img/rockBG2.png') no-repeat center center/cover;
 }
 
 .topup-card {
