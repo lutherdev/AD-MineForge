@@ -19,7 +19,7 @@ class Auth{
 
     public static function attempt(PDO $pdo, string $username, string $password): string {
         try {
-            $user = getUserDataa($username);
+            $user = getUserData($username);
             if (!$user) {
                 return 'wrong_username';
             }
