@@ -42,6 +42,46 @@ function updateCart() {
     cartTotal.textContent = total;
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    const checkoutBtn = document.getElementById('checkout-btn');
+    const cancelBtn = document.getElementById('cancel-btn');
+
+    checkoutBtn.addEventListener('click', function () {
+        if (cart.length === 0) {
+            alert('Your cart is empty!');
+            return;
+        }
+        fetch('/handlers/checkout.handler.php', { 
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include',
+            body: JSON.stringify({ cart }) 
+        })
+        .then(response => response.json()) 
+        .then(result => {
+            if (result.message) {
+                alert(result.message);
+                cart = [];
+                updateCart();
+            } else {
+                alert('Checkout error: ' + (result.error || 'Unknown'));
+            }        
+        })
+        .catch(err => {
+            console.error('Checkout failed:', err);
+            alert('Checkout failed. Try again.');
+        });
+    });
+
+    cancelBtn.addEventListener('click', function () {
+        if (confirm('Are you sure you want to cancel your order?')) {
+            cart = [];
+            updateCart();
+        }
+    });
+});
 
 document.addEventListener("DOMContentLoaded", function () {
   const categoryButtons = document.querySelectorAll(".menu-btn");
@@ -51,11 +91,9 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", () => {
       const category = button.getAttribute("data-category");
 
-      // Highlight active button
       categoryButtons.forEach(btn => btn.classList.remove("active"));
       button.classList.add("active");
 
-      // Filter products
       productCards.forEach(card => {
         const cardCategory = card.getAttribute("data-category");
 
@@ -77,17 +115,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartToggle = document.getElementById("mobile-cart-toggle");
   const cancelBtnMobile = document.getElementById("cancel-btn-mobile");
 
-  // Toggle mobile category popup
   categoryToggle.addEventListener("click", () => {
     categoryPopup.classList.toggle("hidden");
   });
 
-  // Toggle mobile cart popup
   cartToggle.addEventListener("click", () => {
     cartPopup.classList.toggle("hidden");
   });
 
-  // Close when clicking outside content
   categoryPopup.addEventListener("click", (e) => {
     if (e.target === categoryPopup) categoryPopup.classList.add("hidden");
   });
@@ -96,7 +131,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target === cartPopup) cartPopup.classList.add("hidden");
   });
 
-  // Cancel cart
   cancelBtnMobile.addEventListener("click", () => {
     cartPopup.classList.add("hidden");
   });
