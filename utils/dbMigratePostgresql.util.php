@@ -11,14 +11,14 @@ $pdo->exec("DROP TABLE IF EXISTS {$table} CASCADE;");
 }
 
 echo "Applying schema from database/users.model.sql…\n";
-$files = ['database/users.model.sql', 'database/items.model.sql', 'database/item_orders.model.sql'];
+$files = ['database/users.model.sql', 'database/items.model.sql', 'database/item_orders.model.sql', 'database/users_messages.model.sql', 'database/images.model.sql'];
 foreach ($files as $file){
 $sql = file_get_contents($file);
 
 if ($sql === false) {
-    throw new RuntimeException("Could not read database/user.model.sql");
+    throw new RuntimeException("Could not read $file");
 } else {
-    echo "Creation Success from the database/users.model.sql\n";
+    echo "Creation Success from the $file\n";
 }
 $pdo->exec($sql);
 }
