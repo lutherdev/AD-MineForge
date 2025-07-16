@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #1b1b1b;
+  background: linear-gradient(rgba(11, 6, 6, 0.92), rgba(30, 15, 15, 0.9))
 }
 
 .profile-outer {
