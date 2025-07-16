@@ -1,5 +1,5 @@
 <?php
-function getUserData($username): array {
+function getUserData($username) {
     global $pdo;
     $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
     $stmt->execute([':username' => $username]);
