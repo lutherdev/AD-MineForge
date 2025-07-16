@@ -20,7 +20,7 @@ require_once 'bootstrap.php';
 
 echo "Connected to PostgreSQL!\n";
 
-$dbfiles = ['database/users.model.sql', 'database/items.model.sql', 'database/users_messages.model.sql', 'database/item_orders.model.sql'];
+$dbfiles = ['database/users.model.sql', 'database/items.model.sql', 'database/users_messages.model.sql', 'database/item_orders.model.sql', 'images.model.sql'];
 
 foreach ($dbfiles as $dbfile){
 $num = 1;
@@ -35,7 +35,7 @@ $num++;
 
 echo "✅ All Tables created successfully.\n";
 
-foreach (['items', 'users', 'item_orders', 'users_messages'] as $table) {
+foreach (['items', 'users', 'item_orders', 'users_messages', 'images'] as $table) {
     $pdo->exec("TRUNCATE TABLE {$table} RESTART IDENTITY CASCADE;");
     echo "the table $table has been truncated. \n";
 }
