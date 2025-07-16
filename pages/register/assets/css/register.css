@@ -11,8 +11,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   padding: 1rem;
+  min-height: 100vh;
 }
 
 .register-box {
@@ -27,11 +27,11 @@ body {
 
 
 .register-box h2 {
+  font-family: 'MedievalSharp', cursive;
+  color: #5c3a21;
   text-align: center;
-  margin-bottom: 1.5rem;
-  font-size: 1.75rem;
-  color: #d4af37;
-  text-shadow: 1px 1px 2px #1a1a1a;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .input-group {
@@ -49,14 +49,16 @@ body {
 .input-group input[type="password"],
 .input-group select {
   width: 100%;
-  padding: 0.75rem;
+  padding: 0.5rem 0;
   border: none;
   border-bottom: 2px solid #5c4d3c;
-  background-color: rgba(255,255,255,0.7);
   font-size: 1rem;
-  transition: all 0.3s;
-  font-family: 'Georgia',serif;
+  background: transparent;
+  color: #1a1a1a;
+  font-family: 'Georgia', serif;
+  transition: border-color 0.3s ease;
 }
+
 
 .input-group select {
     appearance: none;
@@ -72,9 +74,17 @@ body {
 .input-group input[type="password"]:focus,
 .input-group select:focus {
   border-bottom-color: #d4af37;
-  background-color: rgba(255,255,255,0.9);
   outline: none;
 }
+
+.input-group label{
+  display: block;
+  color: #5c3a21;
+  font-family: 'MedievalSharp', cursive;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
 
 button[type="submit"] {
   width: 100%;
