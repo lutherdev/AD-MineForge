@@ -16,3 +16,20 @@ function getAllItems(): array {
 
     return $items;
 }
+
+function insertItem($pdo, $item) {
+    $stmt = $pdo->prepare("
+        INSERT INTO items (name, price, description, quantity, category, img_path, status)
+        VALUES (:name, :price, :desc, :qty, :cat, :img, :status)
+    ");
+    
+    $stmt->execute([
+        ':name' => strtolower($item['name']),
+        ':desc' => strtolower($item['description']),
+        ':price' => $item['price'],
+        ':qty' => $item['quantity'],
+        ':cat' => strtolower($item['category']),
+        ':img' => $item['image'],
+        ':status' => strtolower($item['status']),
+    ]);
+}
