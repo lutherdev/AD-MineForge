@@ -34,6 +34,33 @@ class Auth{
         }
     }
 
+    public static function register(PDO $pdo, array $data): string {
+        $userData = [
+            'username' => $data['username'],
+            'password' => $data['password'],
+            'first_name' => trim($data['firstname']),
+            'last_name' => trim($data['lastname']),
+            'street' => trim($data['street']),
+            'province' => trim($data['province']),
+            'city' => trim($data['city']),
+        ];
+        if (($usernameError = validateUsername($userData['username'])) !== true) {
+            return $usernameError;
+        }
+        if (($passwordError = validatePassword($userData['password'])) !== true) {
+            return $passwordError;
+        }
+        try {
+            insertUser($pdo, $userData);
+            $user = getUserData($userData['username']);
+            self::sessionSet($user);
+            return 'success';
+        } catch (PDOException $e) {
+            error_log("Registration failed: " . $e->getMessage());
+            return 'db_error';
+        }
+    }
+
     public static function logout(): void
     {
         $_SESSION = [];
