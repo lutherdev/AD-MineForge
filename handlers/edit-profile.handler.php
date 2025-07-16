@@ -16,6 +16,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $inpstreet = trim($_POST['street']);
 
     if ($inpUsername !== '' && $inpfirstName !== '' && $inplastName !== '' && $inpcity !== '' && $inpprovince !== '' && $inpstreet !== '') {
+        if (($usernameError = validateUsername($inpUsername)) !== true) {
+            header('Location: /edit-profile?error='.$usernameError);
+            exit;
+        }
+
+        if ($inpUsername != $currentUsername){
+            if (!(Auth::checkUser($pdo, $inpUsername))){
+                header('Location: /profile-page?error=username+exists');
+                exit;
+            }
+        }
         
         try {
             $stmt = $pdo->prepare("
