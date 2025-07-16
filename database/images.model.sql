@@ -8,6 +8,3 @@ CREATE TABLE IF NOT EXISTS public."images" (
   type             varchar(50)  NOT NULL,
   created_at       timestamptz  NOT NULL DEFAULT now()
 );
-
-ALTER TABLE public."users"
-  ADD COLUMN profile_image_id uuid NULL REFERENCES public."images"(id);
