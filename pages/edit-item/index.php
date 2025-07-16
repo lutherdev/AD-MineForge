@@ -1,4 +1,11 @@
-<!-- BACKEND -->
+<?php
+if (!isset($_SESSION['user'])) {
+    echo "<script>window.location.href = '/login?error=Please+Login+Admin';</script>";
+    exit;
+}
+$success = $_GET['success'] ?? '';
+$error = $_GET['error'] ?? '';
+?>
 <div class="edit-outer">
   <div class="edit">
     <h2>Edit Item</h2>
@@ -19,7 +26,12 @@
         <input type="text" name="changes" required>
 
         <button type="submit">Edit Item</button>
-        <!-- BACKEND -->
+        <?php if (!empty($error)): ?>
+          <p class="error"><?= htmlspecialchars($error) ?></p>
+        <?php endif; ?>
+        <?php if (!empty($success)): ?>
+          <p class="error"><?= htmlspecialchars($success) ?></p>
+        <?php endif; ?>
     </form>
   </div>
 </div>
