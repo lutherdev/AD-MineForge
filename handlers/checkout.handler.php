@@ -102,7 +102,25 @@ try {
             $remaining = $walletCheck->fetchColumn();
         }
 
+        try {
+        $stmt = $pdo->prepare("
+            INSERT INTO item_orders (user_id, item_name, item_category, quantity, price, total)
+            VALUES (:user_id, :item_name, :item_category, :quantity, :price, :total)
+        ");
         
+        $stmt->execute([
+            ':user_id' => $user['id'],
+            ':item_name' => strtolower($item['name']),
+            ':item_category' => strtolower($item['category']),
+            ':quantity' => $item['quantity'],
+            ':price' => $item['price'],
+            ':total' => $item['price'] * $item['quantity']
+        ]);
+        } catch (PDOException $e) {
+            echo json_encode(["error" => "item_orders PDO Failed."]);
+            error_log("Failed to insert item: " . $e->getMessage());
+            error_log("Item Data: " . print_r($item, true));
+        }
     }
     $pdo->commit();
     echo json_encode(["message" => "Order placed successfully."]);
