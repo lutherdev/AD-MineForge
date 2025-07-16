@@ -1,6 +1,4 @@
-<?php
-//BACKEND//
-?>
+
 <div class="add-outer">
   <div class="add">
     <h2>Add New Item</h2>
@@ -29,6 +27,19 @@
         <input type="file" name="item_image" accept="image/*" required>
 
         <button type="submit">Add Item</button>
+        <?php
+if (isset($_GET['error']) && $_GET['error'] === 'name_exists') {
+  echo "<p style='color:red;'>Item name already exists!</p>";
+}
+
+if (isset($_GET['error']) && $_GET['error'] === 'image_upload_failed') {
+  echo "<p style='color:red;'>Failed to upload image.</p>";
+}
+
+if (isset($_GET['success'])) {
+  echo "<p style='color:green;'>Item added successfully!</p>";
+}
+?>
     </form>
   </div>
 </div>
