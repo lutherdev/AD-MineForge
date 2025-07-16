@@ -12,6 +12,11 @@ $pageFile = PAGES_PATH . "/{$folder}/index.php";
 $pageCssPath = "pages/{$folder}/assets/css/{$folder}.css";
 $title = ucfirst($folder);
 
+if (!file_exists($pageFile)) {
+    $pageFile = ERRORS_PATH . "/_404.error.php";
+    $pageCssPath = "/assets/css/_404.css";
+    $title = "404 Not Found";
+}
 
 require_once COMPONENTS_PATH . '/templates/loading.component.php';
 renderMainLayout(function () use ($pageFile) {
