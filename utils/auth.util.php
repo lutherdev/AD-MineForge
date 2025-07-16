@@ -52,7 +52,7 @@ class Auth{
         }
         try {
             insertUser($pdo, $userData);
-            $user = getUserDataa($userData['username']);
+            $user = getUserData($userData['username']);
             self::sessionSet($user);
             return 'success';
         } catch (PDOException $e) {
