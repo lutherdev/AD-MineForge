@@ -29,6 +29,28 @@ try {
         exit;
     }
 
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['action'] === 'register') {
+        $result = Auth::register($pdo, $_POST);
+        switch ($result) {
+            case 'success':
+                header("Location: /");
+                break;
+            case 'invalid_username':
+                header("Location: /register?error=invalid+username");
+                break;
+            case 'weak_password':
+                header("Location: /register?error=weak+password+capitalize+small+number+special+symbols");
+                break;
+            case 'db_error':
+                header("Location: /register?error=username_exists");
+                break;
+            default:
+                header("Location: /register?error=registration+failed");
+                break;
+        }
+        exit;
+    }
+
 }   catch (Exception $e) {
 echo "❌ ERROR: " . $e->getMessage() . "\n";
 exit(255);
