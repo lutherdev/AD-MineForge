@@ -16,3 +16,22 @@ define('ASSETS_PATH', BASE_PATH . '/assets');
 define('DUMMIES_PATH', STATICDATAS_PATH . '/dummies');
 
 chdir(BASE_PATH);
+
+
+require_once UTILS_PATH . '/envSetter.util.php';
+
+require_once UTILS_PATH . '/auth.util.php';
+Auth::init();
+
+$host = $dbConfig['pgHost']; 
+$port = $dbConfig['pgPort'];
+$username = $dbConfig['pgUser'];
+$password = $dbConfig['pgPassword'];
+$dbname = $dbConfig['pgDB'];
+
+$conn_string = "pgsql:host=$host port=$port dbname=$dbname user=$username password=$password";
+
+$pdo = new PDO($conn_string, $dbConfig['pgUser'], $dbConfig['pgPassword'], [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        ]);
+        global $pdo;
