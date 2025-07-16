@@ -1,23 +1,28 @@
-<!--BACKEND-->
-<!--BACKEND-->
-<!--BACKEND-->
-<!--BACKEND-->
-<!--BACKEND-->
+<?php
+if (!isset($_SESSION['user'])) {
+    if ($_SESSION['user']['role'] == 'customer'){
+      echo "<script>window.location.href = '/login?error=Please+Login+Admin';</script>";
+      exit;
+    }
+}
+$success = $_GET['success'] ?? '';
+$error = $_GET['error'] ?? '';
+?>
 
 <div class="remove-outer">
   <div class="remove">
     <h2>Delete User</h2>
     <form action="handlers/remove-user.handler.php" method="POST">
-        <label>Username:</label>
+        <label>username:</label>
         <input type="text" name="username" required>
 
         <button type="submit">Delete User</button>
-        <!--BACKEND--><!--BACKEND-->
-        <!--BACKEND--><!--BACKEND-->
-        <!--BACKEND--><!--BACKEND-->
-        <!--BACKEND--><!--BACKEND-->
-        <!--BACKEND--><!--BACKEND-->
-        <!--BACKEND--><!--BACKEND-->
+        <?php if (!empty($error)): ?>
+          <p class="error"><?= htmlspecialchars($error) ?></p>
+        <?php endif; ?>
+        <?php if (!empty($success)): ?>
+          <p class="error"><?= htmlspecialchars($success) ?></p>
+        <?php endif; ?>
     </form>
   </div>
 </div>
