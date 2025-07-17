@@ -81,7 +81,6 @@ MineForge is a medieval themed store that offers mining tools, gears and ores fo
 #### Deployment
 
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Composer](https://img.shields.io/badge/Composer-885630?style=for-the-badge&logo=composer&logoColor=white)
 
 ## Rules, Practices and Principles
 
